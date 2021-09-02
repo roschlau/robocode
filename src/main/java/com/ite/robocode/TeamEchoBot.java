@@ -9,16 +9,17 @@ package com.ite.robocode;
 
 import robocode.Robot;
 
-public class ExampleRobot extends Robot {
+public class TeamEchoBot extends Robot {
 
     /**
      * run:  Fire's main run function
      */
     public void run() {
-        fire(1);
         while (true) {
-            ahead(5);
-            turnRight(5);
+            ahead(100);
+            turnRight(10);
+            ahead(100);
+            turnLeft(10);
         }
     }
 
@@ -26,7 +27,7 @@ public class ExampleRobot extends Robot {
      * onScannedRobot:
      */
     public void onScannedRobot(robocode.ScannedRobotEvent e) {
-
+        fire(1);
         scan();
     }
 
@@ -34,7 +35,7 @@ public class ExampleRobot extends Robot {
      * onHitByBullet:
      */
     public void onHitByBullet(robocode.HitByBulletEvent e) {
-
+        turnRight(45);
         scan();
     }
 
